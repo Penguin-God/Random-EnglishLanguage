@@ -1,0 +1,53 @@
+#전체{
+    margin-top: 10%; 
+    color : white;
+}
+
+#ReStart{
+    margin-top : 5%;
+    margin-left: 45.5%;
+}
+
+#랜덤영단어{
+    margin-left: 45.5%;
+}
+
+#뜻{
+    overflow: hidden;
+}
+
+#뜻보여주기{
+    position: absolute;
+    top : 35%;
+    left : 76%;
+}
+
+.button{
+    width: 10%;
+    height: 7vh;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.button:hover{
+    background-color: slategray;
+}
+
+.단어장{
+    width: 350px;
+    height: 150px;
+}
+
+body{
+    background-color: #10232c;
+    margin: 0;
+}
+
+table{
+    border-collapse: collapse;
+    border-color: white;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 4%;
+}
