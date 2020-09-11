@@ -1,5 +1,5 @@
-var word = ["one", "two", "three", "four", "five", "six", "seven"] // Key가 영단어 value가 뜻
-var number = ["1", "2", "3", "4", "5", "6", "7"] // 뜻
+var word = ["perserve", "ordinary", "come up with", "method", "rely on", "charm", "lifelong"] // Key가 영단어 value가 뜻
+var number = ["지키다, 간직하다", "평범한", "~을 생각해내다", "방법", "~에 의존하는", "매력, 작은 장식물", "평생의"] // 뜻
 
 var RandomArray
 
@@ -37,6 +37,8 @@ function 다시하기()
 
 // 뜻 보여주는 함수 
 function 뜻보여주기(){
-    document.getElementById("뜻").innerHTML = number[RandomArray]
-    number.splice(RandomArray, 1)
+    if(document.getElementById("뜻").innerText != "다 봤습니다"){
+        document.getElementById("뜻").innerHTML = number[RandomArray]
+        number.splice(RandomArray, 1)
+    }
 }
