@@ -1,9 +1,5 @@
-// if(1){
-//     document.write(Math.floor(Math.random() * 100));
-// }
-//const 영단어원본 = ["one : 1", "two : 2", "three : 3", "four : 4", "five : 5", "six : 6", "seven : 7"]
 var word = ["one : 1", "two : 2", "three : 3", "four : 4", "five : 5", "six : 6", "seven : 7"] // Key가 영단어 value가 뜻
-var number = ["1", "2", "3", "4", "5", "6", "7"]
+var number = ["1", "2", "3", "4", "5", "6", "7"] // 뜻
 
 var RandomArray
 
@@ -25,10 +21,6 @@ function RandomWord()
         document.getElementById("word").innerHTML = "영단어를"
         document.getElementById("뜻").innerHTML = "다 봤습니다"
     }
-
-    // 확인용 출력
-    console.log(RandomArray) 
-    console.log(word)
 }
 
 function 다시하기()
@@ -38,16 +30,8 @@ function 다시하기()
     document.getElementById("뜻").innerHTML = "뜻"
 }
 
-// 뜻 보여주기 함수 아직 미완 
+// 뜻 보여주는 함수 
 function 뜻보여주기(){
     document.getElementById("뜻").innerHTML = number[RandomArray]
     number.splice(RandomArray, 1)
 }
-
-// $(function(){
-//     $("#뜻보여주기").on("click", function(){
-//         var $target = $("input #뜻");
-//         $target.removeId("뜻");
-//     });
-// });
-
