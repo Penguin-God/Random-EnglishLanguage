@@ -1,4 +1,4 @@
-var word = ["one : 1", "two : 2", "three : 3", "four : 4", "five : 5", "six : 6", "seven : 7"] // Key가 영단어 value가 뜻
+var word = ["one", "two", "three", "four", "five", "six", "seven"] // Key가 영단어 value가 뜻
 var number = ["1", "2", "3", "4", "5", "6", "7"] // 뜻
 
 var RandomArray
@@ -11,10 +11,9 @@ function RandomWord()
     else{
         // 배열크기에 맞는 수 랜덤으로 부르고 자르기
         RandomArray = Math.floor(Math.random() * word.length)
-        var 영단어구분 = word[RandomArray].split(":")
 
         // 배열 구분 및 html에 값 전달
-        document.getElementById("word").innerHTML = 영단어구분[0]
+        document.getElementById("word").innerHTML = word[RandomArray]
         document.getElementById("뜻").innerHTML = "뜻"
 
         // 이미 한번 본 영단어 삭제
@@ -30,7 +29,8 @@ function RandomWord()
 
 function 다시하기()
 {
-    word = ["one : 1", "two : 2", "three : 3", "four : 4", "five : 5", "six : 6", "seven : 7"]
+    word = ["one", "two", "three", "four", "five", "six", "seven"]
+    number = ["1", "2", "3", "4", "5", "6", "7"]
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
 }
