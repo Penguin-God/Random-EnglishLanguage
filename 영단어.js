@@ -29,8 +29,8 @@ function RandomWord()
 
 function 다시하기()
 {
-    word = ["one", "two", "three", "four", "five", "six", "seven"]
-    number = ["1", "2", "3", "4", "5", "6", "7"]
+    word = ["perserve", "ordinary", "come up with", "method", "rely on", "charm", "lifelong"]
+    number =  ["지키다, 간직하다", "평범한", "~을 생각해내다", "방법", "~에 의존하는", "매력, 작은 장식물", "평생의"]
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
 }
