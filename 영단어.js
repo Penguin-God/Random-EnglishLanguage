@@ -6,9 +6,9 @@ var RandomArray
 function RandomWord() 
 {
     if(document.getElementById("뜻").innerText == "뜻" && document.getElementById("word").innerText != "영단어"){
-        console.log("awsfdga")
+        document.getElementById("뜻").innerHTML = "뜻을 확인해주세요"
     }
-    else{
+    else if(document.getElementById("뜻").innerText != "뜻을 확인해주세요"){
         // 배열크기에 맞는 수 랜덤으로 부르고 자르기
         RandomArray = Math.floor(Math.random() * word.length)
 
