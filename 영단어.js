@@ -1,5 +1,7 @@
-var word = ["perserve : 지키다", "ordinary : 평범한", "come up with : ~을 생각해내다", "method : 방법", "rely on : ~에 의존하는", "charm : 매력, 작은 장식물", "lifelong : 평생의"] // Key가 영단어 value가 뜻
-//var number = ["지키다, 간직하다", "평범한", "~을 생각해내다", "방법", "~에 의존하는", "매력, 작은 장식물", "평생의"] // 뜻
+// Key가 영단어 value가 뜻
+var word = ["perserve : 지키다", "ordinary : 평범한", "come up with : ~을 생각해내다", "method : 방법", "rely on : ~에 의존하는", "charm : 매력, 작은 장식물", 
+"lifelong : 평생의"] 
+
 
 var RandomArray
 var 영단어구분
@@ -9,7 +11,7 @@ function RandomWord()
     if(document.getElementById("뜻").innerText == "뜻" && document.getElementById("word").innerText != "영단어"){
         document.getElementById("뜻").innerHTML = "뜻을 확인해주세요"
     }
-    else if(document.getElementById("뜻").innerText != "뜻을 확인해주세요"){
+    else if(document.getElementById("뜻").innerText != "뜻을 확인해주세요" && word.length != 0){
         // 배열크기에 맞는 수 랜덤으로 부르고 자르기
         RandomArray = Math.floor(Math.random() * word.length)
         영단어구분 = word[RandomArray].split(":")
@@ -32,8 +34,7 @@ function RandomWord()
 
 function 다시하기()
 {
-    word = ["perserve", "ordinary", "come up with", "method", "rely on", "charm", "lifelong"]
-    number =  ["지키다, 간직하다", "평범한", "~을 생각해내다", "방법", "~에 의존하는", "매력, 작은 장식물", "평생의"]
+    word = ["perserve : 지키다", "ordinary : 평범한", "come up with : ~을 생각해내다", "method : 방법", "rely on : ~에 의존하는", "charm : 매력, 작은 장식물", "lifelong : 평생의"]
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
 }
@@ -42,6 +43,5 @@ function 다시하기()
 function 뜻보여주기(){
     if(document.getElementById("뜻").innerText != "다 봤습니다"){
         document.getElementById("뜻").innerHTML = 영단어구분[1]
-        number.splice(RandomArray, 1)
     }
 }
