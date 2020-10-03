@@ -1,5 +1,5 @@
 // Key가 영단어 value가 뜻
-var word = [
+var one_word = [
 "perserve : 지키다", "hold on to : ~을 계속 보유하다", "precious : 소중한", "souvenir : 기념품", "purchase : 구입하다", "bring back : ~을 기억나게하다, 가져오다",
 "other than : ~외에", "ordinary : 평범한", "last : 마지막, 지속되다", "come up with : ~을 생각해내다", "method : 방법", "visible : 눈에보이는", "spontaneous : 즉흥적인, 자발적인",
 "rely on : ~에 의존하는", "hostel : 호스텔 (숙박시설)", "route : 길, 경로", "sigthseeing : 관광", "accumulate : 축적하다", "landmark : 랜드마크, 관광명소", "layer : 겹, 층",
@@ -26,6 +26,18 @@ var three_word = [
     "proper : 적절한", "objective : 객관적인", "convince A of B : A에게 B를 납득시키다", "come across : 유연히 마주치다", "blindly : 맹목적으로", "in detail : 상세하게",
     "judge : 판단하다"
 ]
+
+var word = []
+
+function WordSelection(Word){
+    if(Word == 1){
+        word = one_word
+    }
+    else if(Word == 3){
+        word = three_word
+    }
+}
+
 
 var RandomArray
 var 영단어구분
@@ -58,7 +70,7 @@ function RandomWord()
 
 function 다시하기()
 {
-    word = [
+    one_word = [
         "perserve : 지키다", "hold on to : ~을 계속 보유하다", "precious : 소중한", "souvenir : 기념품", "purchase : 구입하다", "bring back : ~을 기억나게하다, 가져오다",
         "other than : ~외에", "ordinary : 평범한", "last : 마지막, 지속되다", "come up with : ~을 생각해내다", "method : 방법", "visible : 눈에보이는", "spontaneous : 즉흥적인, 자발적인",
         "rely on : ~에 의존하는", "hostel : 호스텔 (숙박시설)", "route : 길, 경로", "sigthseeing : 관광", "accumulate : 축적하다", "landmark : 랜드마크, 관광명소", "layer : 겹, 층",
@@ -69,6 +81,21 @@ function 다시하기()
         "shore : 해안", "keep in touch : 연락하고 지내다", "obviously : 분명히", "conversation : 대화", "elderly : 노인, 나이가 지긋한", "happen upon : ~을 우연히 발견하다", 
         "prove : 입증하다", "in the end : 결국", "personal : 개인적인", "soul : 마음, 정신", "enrich : 풍성하게 하다", "grap : 붙잡다, 잡아치기", "capture : 캡쳐, 포착", "priceless : 대단히 귀중한"
         ] 
+    three_word =  [
+        "trick : 속임수", "statistics : 통계", "commercial : 광고", "figure : 수치", "generally : 일반적으로", "rating : 평점", "review : 논평, 비평", "similarly : 마찬가지로",
+        "fasten : 착용하다, 묶다", "survive : 생존하다", "present : 제시하다", "unfortunately : 안타깝게도", "misuse : 악용, 오용", "claim : 주장하다", "independent : 독립적인",
+        "laboratory : 실험심, 연구소", "guarantee : 보장하다", "agency : (정부)기관, 대리점", "noticeable : 뚜렷함", "defective : 결함이 있는", "a wide range of : 다양함",
+        "misleading : 오해의 소지가 있는", "purpose : 목적", "survey : (설문)조시", "atmosphere : 분위기", "fill out : ~을 작성하다", "normal : 보통의", "reaction : 반응",
+        "voluntary : 자발적인", "sampling : 표본추출", "biased : 편향된", "in favor of : ~에 지지하여", "underrepresent : 적게 표시하다", "moderate : 중도의, 보통의",
+        "trap : 함정", "corporation : 기업", "employee : 직원", "well-paying : 보수가 좋은", "recruit : 뽑다, 모집하다", "competent : 유능한", "candidate : 지원자",
+        "distribute : 배부하다", "yearly salary : 연봉", "spread : 퍼뜨리다", "depending on : ~에 따라", "illustration : 일러스트레이션, 삽화", "term : 용어",
+        "indicate : 가리키다", "mean : 평균", "calculate : 계산하다", "median : 중앙값", "mode : 최빈값", "frequently : 자주", "a handful of : 소수의", "perceive : 인지하다",
+        "deceptively : 기만적으로, 믿을 수 없이", "convincing : 설득력 있는", "sort : 종류", "accurate : 정확한", "display : 보여주다", "raw : 원료 그대로의",
+        "misrepresent : 잘못 표현하다", "axis : 축", "vertical : 세로", "horizontal : 가로", "modest : 적당한", "notable : 주목할만한", "argument : 주장", "hence : 이런 이유로",
+        "unit : 단위", "assume : 추정하다", "emphasize : 강조하다", "state : 말하다, 진술하다", "debate : 토론", "support : 뒷받침하다", "reinforce : 강화하다",
+        "proper : 적절한", "objective : 객관적인", "convince A of B : A에게 B를 납득시키다", "come across : 유연히 마주치다", "blindly : 맹목적으로", "in detail : 상세하게",
+        "judge : 판단하다"
+    ]
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
 }
