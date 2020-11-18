@@ -27,6 +27,10 @@ var three_word = [
     "judge : 판단하다"
 ]
 
+var nobember_test_word = [
+    "contribute : 기여하다, 기부하다", "benefit : 이익", "insight : 통찰력", "opinion : 의견, 판단, 생각", "opinionated : 자기주장이 강한 사람", "vast : 거대한, 막대한, 굉장한"
+]
+
 var word = []
 
 function WordSelection(Word){
