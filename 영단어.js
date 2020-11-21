@@ -28,7 +28,13 @@ var three_word = [
 ]
 
 var nobember_test_word = [
-    "contribute : 기여하다, 기부하다", "benefit : 이익", "insight : 통찰력", "opinion : 의견, 판단, 생각", "opinionated : 자기주장이 강한 사람", "vast : 거대한, 막대한, 굉장한"
+    "contribute : 기여하다, 기부하다", "benefit : 이익", "insight : 통찰력", "opinion : 의견, 판단, 생각", "opinionated : 자기주장이 강한 사람", 
+    "vast : 거대한, 막대한, 굉장한", "evaluate : 평가하다"
+]
+
+var word_4 = [
+    "invaleable : 가치를 매길 수 없는", "unaware : 알지 못하는", "compensation : 보상", "impresses : 감동", "obsessed : 집착하다, 사로잡히다",
+    "depict : 묘사하다", "in detail : 자세히, 상세히", "die down = fade away = disappear : 사라지다", "recognize : 인식하다"
 ]
 
 var word = []
