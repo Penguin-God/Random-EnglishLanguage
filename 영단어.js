@@ -1,5 +1,5 @@
 // Key가 영단어 value가 뜻
-var day_1 = [
+const day_1 = [
 "social : 사회적인", "overlook : 간과하다, 못 본 체하다", "public : 공공의, 대중의", "undo : (잠긴 것을) 풀다, 열다", "undermine : 약화[손상]시키다", "reflect : 반사하다, 반영하다",
 "object : 물건, 물체, 목표", "lead : 안내하다, 이끌다", "state : 상태, 국가", "instance : 사례, 경우", "evidence : 증거, 증명", "perform : 행하다, 실시하다", "influence : 영향(력)",
 "achieve : 이루다, 성취하다", "quarrel : 다투다, 언쟁을 벌이다", "offer : 제공하다, 제의[제안]하다", "occur : 일어나다, 발생하다", "concern : 걱정, 관계", "risk : 위험", 

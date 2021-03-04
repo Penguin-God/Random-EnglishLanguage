@@ -9,23 +9,22 @@
     <script src="영단어.js"></script>
 </head>
 <body>
-    <input type="button" value="1과" id="1과" class="WordButton" onclick="WordSelection(1)">
-    <input type="button" value="3과" id="3과" class="WordButton" onclick="WordSelection(3)">
+    <div id="container">
+        <div>
+        <input type="button" value="1과" id="1과" onclick="WordSelection(1)">
+        <input type="button" value="3과" id="3과" onclick="WordSelection(3)">
+        </div>
 
-    <div id="전체">
         <input type="button" id="랜덤영단어" class = "button" value="다음 영단어" onclick="RandomWord()"> <!-- 온클릭 시 randomword()함수 사용 !-->
-        <table border="2" align="center"> 
+        <table border="2" align="center">
             <tr>
                 <td class="단어장" id="word">영단어</td>
                 <td class="단어장" id="뜻">뜻</td>
             </tr>
         </table>
+        <input type="button" id="ReStart" class = "button" value="다시 시작하기" onclick="다시하기()">
     </div>
 
-    <input type="button" id="뜻보여주기" class = "button" value="뜻 확인" onclick="뜻보여주기()">
-    
-    <div>
-    <input type="button" id="ReStart" class = "button" value="다시 시작하기" onclick="다시하기()">
-    </div>
+    <!-- <input type="button" id="뜻보여주기" class = "button" value="뜻 확인" onclick="뜻보여주기()"> -->
 </body>
 </html>

@@ -1,62 +1,66 @@
-#전체{
-    margin-top: 10%; 
-    color : white;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}  /* css reset */
+
+html{
+    background-color: #10232c;
 }
 
-#ReStart{
-    margin-top : 5%;
-    margin-left: 45.5%;
-}
-
-#랜덤영단어{
-    margin-left: 45.5%;
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
 #뜻{
     overflow: hidden;
 }
 
-#뜻보여주기{
-    position: absolute;
-    top : 35%;
-    left : 76%;
+input{
+    font-weight: 600;
+    font-size: 150%;
 }
 
-.button{
-    width: 10%;
-    height: 7vh;
-    font-size: 1.6em;
-    font-weight: bold;
-}
-
-.button:hover{
+input:hover{
     background-color: slategray;
 }
 
-.단어장{
-    width: 350px;
-    height: 150px;
+.button{
+    margin-top: 15%;
 }
 
-body{
-    background-color: #10232c;
-    margin: 0;
+.단어장{
+    width: 10%;
+    height: 10vh;
 }
 
 table{
+    color: white;
     border-collapse: collapse;
     border-color: white;
     text-align: center;
-    font-size: 60px;
+    font-size: 200%;
     font-weight: bold;
     margin-top: 4%;
-}
-
-.WordButton{
-    width: 10%;
-    height: 7vh;
-    font-size: 1.6em;
-    font-weight: bold;
-    margin-left: 2%;
-    margin-top: 1%;
 }
