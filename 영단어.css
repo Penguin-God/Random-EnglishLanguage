@@ -20,21 +20,26 @@ ol, ul {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}  /* css reset */
+}  
+/* css reset */
 
 html{
     background-color: #10232c;
 }
 
 .container{
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 }
 
 #뜻{
     overflow: hidden;
+}
+
+#en_button{
+    text-align: center;
 }
 
 input{
@@ -44,10 +49,6 @@ input{
 
 input:hover{
     background-color: slategray;
-}
-
-.button{
-    margin-top: 15%;
 }
 
 .단어장{
@@ -63,4 +64,9 @@ table{
     font-size: 200%;
     font-weight: bold;
     margin-top: 4%;
+}
+
+.en_button{
+    text-align: center;
+    margin-top: 5%;
 }
