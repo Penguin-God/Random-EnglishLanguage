@@ -9,44 +9,46 @@ const day_1 = [
 "hygiene : 위생", "condition : 상태, 환경, 조건", "hue : 색조, 빛깔", "rate : 속도, 비율, 요금", "capacity : 용량, 능력", "crude : 천연 그대로의, 대충의"
 ]
 
-var word = []
+var test_Word = []
 
-function WordSelection(Word){
-    if(Word == 1){
-        word = day_1
+function WordSelection(day){
+    if(day == 1){
+        test_Word = day_1
     }
-    else if(Word == 3){
-        word = three_word
+    else if(day == 3){
+        test_Word = test_Word
     }
 }
 
 
-var RandomArray
+var randomNumber
 var 영단어구분
 
-function RandomWord() 
+function Split_Englsih_Korean() {
+    randomNumber = Math.floor(Math.random() * test_Word.length)
+    영단어구분 = test_Word[randomNumber].split(":")
+}
+
+function ConveyMeaning_ToHTML() {
+    document.getElementById("word").innerHTML = 영단어구분[0]
+    document.getElementById("뜻").innerHTML = "뜻"
+}
+
+function RandomWord()
 {
-    if(document.getElementById("뜻").innerText == "뜻" && document.getElementById("word").innerText != "영단어"){
-        document.getElementById("뜻").innerHTML = "뜻을 확인해주세요"
+    if(test_Word.length == 0){ // 영단어 다 볼시 문구
+        document.getElementById("word").innerHTML = "영단어를"
+        document.getElementById("뜻").innerHTML = "다 봤습니다"
+        return;
     }
-    else if(document.getElementById("뜻").innerText != "뜻을 확인해주세요" && word.length != 0){
-        // 배열크기에 맞는 수 랜덤으로 부르고 자르기
-        RandomArray = Math.floor(Math.random() * word.length)
-        영단어구분 = word[RandomArray].split(":")
 
-        // 배열 구분 및 html에 값 전달
-        document.getElementById("word").innerHTML = 영단어구분[0]
-        //document.getElementById("word").innerHTML = word[RandomArray]
-        document.getElementById("뜻").innerHTML = "뜻"
-
-        // 이미 한번 본 영단어 삭제
-        word.splice(RandomArray, 1) // .splice(index, 삭제할원소 개수, 치환할 내용)
-
-        // 영단어 다 볼시 문구
-        if(word.length == 0){
-            document.getElementById("word").innerHTML = "영단어를"
-            document.getElementById("뜻").innerHTML = "다 봤습니다"
-        }
+    if(document.getElementById("랜덤영단어").innerText != "뜻 확인하기"){
+        Split_Englsih_Korean()
+        ConveyMeaning_ToHTML()
+        document.getElementById("랜덤영단어").innerHTML = "뜻 확인하기"
+    }
+    else if(document.getElementById("랜덤영단어").innerText == "뜻 확인하기"){
+        뜻보여주기()
     }
 }
 
@@ -84,7 +86,7 @@ function 다시하기()
 
 // 뜻 보여주는 함수 
 function 뜻보여주기(){
-    if(document.getElementById("뜻").innerText != "다 봤습니다"){
-        document.getElementById("뜻").innerHTML = 영단어구분[1]
-    }
+    document.getElementById("뜻").innerHTML = 영단어구분[1]
+    test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
+    document.getElementById("랜덤영단어").innerText = "다음 영단어"
 }

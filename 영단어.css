@@ -47,6 +47,11 @@ input{
     font-size: 150%;
 }
 
+button{
+    font-weight: 600;
+    font-size: 150%;
+}
+
 input:hover{
     background-color: slategray;
 }
