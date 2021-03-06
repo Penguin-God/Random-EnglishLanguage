@@ -42,18 +42,10 @@ html{
     text-align: center;
 }
 
-input{
-    font-weight: 600;
-    font-size: 150%;
-}
-
 button{
+    margin-top: 5%;
     font-weight: 600;
     font-size: 150%;
-}
-
-input:hover{
-    background-color: slategray;
 }
 
 .단어장{
@@ -73,5 +65,9 @@ table{
 
 .en_button{
     text-align: center;
-    margin-top: 5%;
+}
+
+.myNumber{
+    font-weight: 600;
+    font-size: 150%;
 }

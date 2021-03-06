@@ -1,3 +1,5 @@
+var test_Word = []
+
 const day_1 = [
 "social : 사회적인", "overlook : 간과하다, 못 본 체하다", "public : 공공의, 대중의", "undo : (잠긴 것을) 풀다, 열다", "undermine : 약화[손상]시키다", "reflect : 반사하다, 반영하다",
 "object : 물건, 물체, 목표", "lead : 안내하다, 이끌다", "state : 상태, 국가", "instance : 사례, 경우", "evidence : 증거, 증명", "perform : 행하다, 실시하다", "influence : 영향(력)",
@@ -22,17 +24,55 @@ const day_2 = [
     "imminent : 임박한, 절박한"    
 ]
 
-var test_Word = []
+const  day_3 = [
+    "this is 3"
+]
 
-function WordSelection(day){
-    if(day == 1){
-        test_Word = day_1
-    }
-    else if(day == 3){
-        test_Word = test_Word
+const  day_4 = [
+    "this is 4"
+]
+
+const  day_5 = [
+    "this is 5"
+]
+
+const  day_6 = [
+    "this is 6"
+]
+
+const  day_7 = [
+    "this is 7"
+]
+
+const  day_8 = [
+    "this is 8"
+]
+
+const  day_9 = [
+    "this is 9"
+]
+
+const  day_10 = [
+    "this is 10"
+]
+
+const days = [day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10]
+
+function Add_DayWords(startDay, endDay){
+    for(i = startDay - 1; i < endDay; i++){
+        for(j = 0; j < days[i].length; j++){
+            test_Word.push(days[i][j])
+        }
     }
 }
 
+function SetDay() {
+    startDay = document.getElementById("startDay").value
+    endDay = document.getElementById("endDay").value
+    Add_DayWords(startDay, endDay)
+    console.log(test_Word)
+    console.log(test_Word.length)
+}
 
 var randomNumber
 var 영단어구분
