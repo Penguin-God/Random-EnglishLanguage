@@ -34,10 +34,6 @@ html{
     align-items: center; */
 }
 
-#뜻{
-    overflow: hidden;
-}
-
 #en_button{
     text-align: center;
 }
@@ -70,4 +66,8 @@ table{
 .myNumber{
     font-weight: 600;
     font-size: 150%;
+}
+
+#word_note{
+    display: none;
 }

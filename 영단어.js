@@ -70,8 +70,12 @@ function SetDay() {
     startDay = document.getElementById("startDay").value
     endDay = document.getElementById("endDay").value
     Add_DayWords(startDay, endDay)
-    console.log(test_Word)
-    console.log(test_Word.length)
+    HideAndShow()
+}
+
+function HideAndShow() {
+    $("#getDays").toggle()
+    $("#word_note").toggle()
 }
 
 var randomNumber

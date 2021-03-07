@@ -5,34 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>랜덤영단어</title>
     <link rel="stylesheet" href="영단어.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="영단어.js"></script>
 </head>
 <body>
     <div id="container">
-    <div id="getDays">
-        <input id="startDay" type="number" class="myNumber" placeholder="시작할 day를 적어주세요">
-        <input id="endDay" type="number" class="myNumber" placeholder="끝낼 day를 적어주세요">
-    </div>
-
-        <div class="day_button">
-            <button onclick="SetDay()">시작하기</button>
-            <!-- <input type="button" value="1과" id="1과" onclick="WordSelection(1)">
-            <input type="button" value="3과" id="3과" onclick="WordSelection(2)"> -->
-        </div>
-        <div class="en_button">
-            <button id="랜덤영단어" class = "button" onclick="RandomWord()">다음 영단어</button>
+        <div id="getDays">
+            <input id="startDay" type="number" class="myNumber" placeholder="시작할 day를 적어주세요">
+            <input id="endDay" type="number" class="myNumber" placeholder="끝낼 day를 적어주세요">
+            
+            <div class="day_button">
+                <button id="day_button" onclick="SetDay()">시작하기</button>
+            </div>
         </div>
 
-        <table border="2" align="center">
-            <tr>
-                <td class="단어장" id="word">영단어</td>
-                <td class="단어장" id="뜻">뜻</td>
-            </tr>
-        </table>
-        <div class="en_button">
-            <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button>
+        <div id="word_note">
+            <div class="en_button">
+                <button id="랜덤영단어" class = "button" onclick="RandomWord()">다음 영단어</button>
+            </div>
+
+            <table border="2" align="center">
+                <tr>
+                    <td class="단어장" id="word">영단어</td>
+                    <td class="단어장" id="뜻">뜻</td>
+                </tr>
+            </table>
+            <div class="en_button">
+                <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button>
+            </div>
         </div>
     </div>
+
+    <script> 
+        // $(document).ready(function() {
+        //     $("#day_button").click(function() {
+        //         $("#getDays").toggle()
+        //     })
+        // })
+    </script>
 </body>
 </html>
