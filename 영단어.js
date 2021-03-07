@@ -7,7 +7,7 @@ const day_1 = [
 "ivdividual : 개개의, 개별적인, 독특한", "interpersonal : 대인 관계에 관련된", "consume : 소비[소모]히디, 먹다", "impact : 영향, 충격", "lack : 부족, 결핍", "reduction : 축소, 감소",
 "position : 위치, 자세, 태도", "compact : 소형차, 콤팩트 (휴대용 화장 분갑)", "endanger : 위험에 빠뜨리다", "term : 용어, 기간, 학기", "demand : 요구, 수요", "simplicity : 간단함, 단순함",
 "medium : 중간의", "ubiquitous : 어디에나 있는", "support : 지지[옹호]하다, 부양하다", "contrast : 차이, 대조", "force : 힘, 폭력", "mean : 의미하다, 의도하다", "encode : 암호화하다",
-"hygiene : 위생", "condition : 상태, 환경, 조건", "hue : 색조, 빛깔", "rate : 속도, 비율, 요금", "capacity : 용량, 능력", "crude : 천연 그대로의, 대충의"
+"hygiene : 위생", "condition : 상태, 환경, 조건", "hue : 색조, 빛깔", "rate : 속도, 비율, 요금", "capacity : 수용력, 용량, 능력", "crude : 천연 그대로의, 대충의"
 ]
 
 const day_2 = [
@@ -122,10 +122,10 @@ function ReStart()
 {
     test_Word = []
     HideAndShow()
-    ValueReset()
+    ResetValue()
 }
 
-function ValueReset() {
+function ResetValue() {
     document.getElementById("startDay").value = ""
     document.getElementById("endDay").value = ""
     document.getElementById("word").innerHTML = "영단어"
