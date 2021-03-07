@@ -14,34 +14,25 @@
             <input id="startDay" type="number" class="myNumber" placeholder="시작할 day를 적어주세요">
             <input id="endDay" type="number" class="myNumber" placeholder="끝낼 day를 적어주세요">
             
-            <div class="day_button">
-                <button id="day_button" onclick="SetDay()">시작하기</button>
+            <div class="day_button"> 
+                <button id="day_button" onclick="SetDay()">시작하기</button> 
             </div>
         </div>
 
         <div id="word_note">
-            <div class="en_button">
-                <button id="랜덤영단어" class = "button" onclick="RandomWord()">다음 영단어</button>
+            <div class="en_button"> 
+                <button id="랜덤영단어" class = "button" onclick="RandomWord()">다음 영단어</button> 
             </div>
-
             <table border="2" align="center">
                 <tr>
                     <td class="단어장" id="word">영단어</td>
                     <td class="단어장" id="뜻">뜻</td>
                 </tr>
             </table>
-            <div class="en_button">
-                <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button>
+            <div class="en_button"> 
+                <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button> 
             </div>
         </div>
     </div>
-
-    <script> 
-        // $(document).ready(function() {
-        //     $("#day_button").click(function() {
-        //         $("#getDays").toggle()
-        //     })
-        // })
-    </script>
 </body>
 </html>
