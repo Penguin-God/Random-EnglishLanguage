@@ -78,6 +78,7 @@ function HideAndShow() {
     $("#word_note").toggle()
 }
 
+
 var randomNumber
 var 영단어구분
 
@@ -104,14 +105,9 @@ function RandomWord()
         ConveyMeaning_ToHTML()
         document.getElementById("랜덤영단어").innerHTML = "뜻 확인하기"
     }
-    else if(document.getElementById("랜덤영단어").innerText == "뜻 확인하기"){
+    else{
         뜻보여주기()
     }
-}
-
-function ReStart()
-{
-    test_Word = []
 }
 
 // 뜻 보여주는 함수 
@@ -119,4 +115,19 @@ function 뜻보여주기(){
     document.getElementById("뜻").innerHTML = 영단어구분[1]
     test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
     document.getElementById("랜덤영단어").innerText = "다음 영단어"
+}
+
+
+function ReStart()
+{
+    test_Word = []
+    HideAndShow()
+    ValueReset()
+}
+
+function ValueReset() {
+    document.getElementById("startDay").value = ""
+    document.getElementById("endDay").value = ""
+    document.getElementById("word").innerHTML = "영단어"
+    document.getElementById("뜻").innerHTML = "뜻"
 }
