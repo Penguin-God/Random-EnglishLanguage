@@ -24,8 +24,15 @@ const day_2 = [
     "imminent : 임박한, 절박한"    
 ]
 
-const  day_3 = [
-    "this is 3"
+const day_3 = [
+"tendency : 경향, 성향", "observe : 관찰[주시]하다, (법률, 규칙 등을)준수하다, 말하다", "diversity : 다양성", "nonverbal : 말을 사용하지 않는, 비언어적인", "escalate : 확대되다, 증가하다",
+"native : 출생지의, 토착의", "contact : 연락, 접촉, 맞닿음", "distance : 거리", "enhance : 높이다, 강화하다", "radiant : 빛나는, 환한", "select : 선택[선발]하다", "interaction : 상호작용",
+"contribute : 기부하다, 기여하다, 공헌하다", "specific : 명확한, 구체적인", "authority : 권위, 권력", "ignore : 무시하다", "relative : 상대적인, 관련있는", "significant : 중요한, 상당한",
+"identify : (신원을)확인하다, 동일시하다", "practice : 실행, 관행, 연습", "aware : 알고있는", "era : 시대", "chemical : 화학의, 화학적인", "previous : 이전의, 앞의", "shiver : (추위, 공포 등으로)몸을 떨다",
+"perceive : 지각[인지]하다, 이해하다", "assume : 추정하다, (책임, 역할을)맡다", "conduct : 수행하다, 안내하다, 지휘하다", "prove : 입증[증명]하다, (~임이)판명되다", "eradicate : 근절하다, 뿌리뽑다",
+"outcome : 결과, 성과", "anxiety : 불안, 열망", "present : 현재, 선물", "genetic : 유전(학)의", "promote : 촉진[장려]하다, 홍보하다, 진급[승진]시키다", "irrational : 비이성적인, 분별이 없는",
+"bear : 참다, (감정을)가지다, (아이를)낳다, (책임을)지다", "bias : 편견, 편향", "heritage : (사회적, 문화적)유산", "colleague : 동료", "majority : 다수(집단)", "inclusive : 포괄적인, (~을)포함한",
+"fast : 단식[금식]하다", "conflict : 충돌, 갈등", "enrich : 부유하게 하다, 질을 높이다", "mindful : 염두에 두는, 주의하는"
 ]
 
 const  day_4 = [
