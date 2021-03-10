@@ -35,15 +35,20 @@ browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
 Sleep_and_ClickXpath(3, "/html/body/div[1]/div[2]/div/div/div[2]/div/a[14]/div/div[1]/img")
 
+# 광고 우회용
 time.sleep(3)
 button = browser.find_element_by_xpath("//*[@id='newsPopupModal']/div[2]/div/div/div[4]/a/i")
 browser.execute_script("arguments[0].click();", button)
 
-Sleep_and_ClickXpath(3, "/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div/a")
+for i in range(15):
+    xPath = "/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div[{}]/div[1]/div[2]/div/a".format(i + 1)
+    Sleep_and_ClickXpath(3, xPath)
+    time.sleep(2)
+    browser.back()
+
 
 soup = BeautifulSoup(browser.page_source, "html5lib")
-#print(soup)
-
+print(soup)
 
 en = soup.find_all("div", attrs = {"class" : "ex_front hidden"})
 kr = soup.find_all("div", attrs = {"class" : "ex_back hidden"})
@@ -51,16 +56,18 @@ kr = soup.find_all("div", attrs = {"class" : "ex_back hidden"})
 
 en_array = []
 kr_array = []
+tojson_day = OrderedDict()
 
 for i in range(len(en)):
     en_array.append(en[i].get_text())
     kr_array.append(kr[i].get_text())
 
-
-tojson_day = OrderedDict()
-
 for i in range(len(en_array)):
     tojson_day[en_array[i]] = kr_array[i]
 
-with open('en.json', 'w', encoding='utf-8') as makeJson:
-    json.dump(tojson_day, makeJson, ensure_ascii=False, indent='\t')
+#data = {}
+# for i in range(15):
+#     data[i] = tojson_day
+
+# with open('en.json', 'w', encoding='utf-8') as makeJson:
+#     json.dump(data, makeJson, ensure_ascii=False, indent='\t')
