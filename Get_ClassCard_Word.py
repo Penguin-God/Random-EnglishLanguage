@@ -4,6 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import random
+import os
+import json
+from collections import OrderedDict
+
 browser = webdriver.Chrome() 
 browser.get("https://www.classcard.net/set/4520841")
 
@@ -36,7 +40,27 @@ button = browser.find_element_by_xpath("//*[@id='newsPopupModal']/div[2]/div/div
 browser.execute_script("arguments[0].click();", button)
 
 Sleep_and_ClickXpath(3, "/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div/a")
-#Sleep_and_ClickXpath(3, "//*[@id='newsPopupModal']/div[2]/div/div/div[4]/a/i")
 
 soup = BeautifulSoup(browser.page_source, "html5lib")
-print(soup)
+#print(soup)
+
+
+en = soup.find_all("div", attrs = {"class" : "ex_front hidden"})
+kr = soup.find_all("div", attrs = {"class" : "ex_back hidden"})
+
+
+en_array = []
+kr_array = []
+
+for i in range(len(en)):
+    en_array.append(en[i].get_text())
+    kr_array.append(kr[i].get_text())
+
+
+tojson_day = OrderedDict()
+
+for i in range(len(en_array)):
+    tojson_day[en_array[i]] = kr_array[i]
+
+with open('en.json', 'w', encoding='utf-8') as makeJson:
+    json.dump(tojson_day, makeJson, ensure_ascii=False, indent='\t')
