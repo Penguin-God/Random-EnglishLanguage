@@ -1,39 +1,50 @@
 var test_Word = []
 
-const day_1 = []
-const day_2 = []
-const day_3 = []
-const  day_4 = []
-const  day_5 = []
-const  day_6 = []
-const  day_7 = []
-const  day_8 = []
-const  day_9 = []
-const  day_10 = []
-const  day_11 = []
-const  day_12 = []
-const  day_13 = []
-const  day_14 = []
-const  day_15 = []
-
-const days = [day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15]
+var day_1 = []
+var day_2 = []
+var day_3 = []
+var day_4 = []
+var day_5 = []
+var day_6 = []
+var day_7 = []
+var day_8 = []
+var day_9 = []
+var day_10 = []
+var day_11 = []
+var day_12 = []
+var day_13 = []
+var day_14 = []
+var day_15 = []
+var days = []
 
 fetch("./word_data.json") // read json
     .then(function(resp){
         return resp.json();
     })
     .then(function(data){
-        for(var i = 0; i < days.length; i++){
-            var word_day = "day" + String(i + 1)
-            days[i] = data[word_day]
-            console.log(days[i])
-        }
+        day_1 = data["day1"]
+        day_2 = data["day2"]
+        day_3 = data["day3"]
+        day_4 = data["day4"]
+        day_5 = data["day5"]
+        day_6 = data["day6"]
+        day_7 = data["day7"]
+        day_8 = data["day8"]
+        day_9 = data["day9"]
+        day_10 = data["day10"]
+        day_11 = data["day11"]
+        day_12 = data["day12"]
+        day_13 = data["day13"]
+        day_14 = data["day14"]
+        day_15 = data["day15"]
+        days = [day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15]
     });
 
-function Add_DayWords(startDay, endDay){
+
+function Add_DayWords(startDay, endDay){ // 보여줄 영단어 test_Word에 push하기
     for(i = startDay - 1; i < endDay; i++){
-        for(j = 0; j < days[i].length; j++){
-            test_Word.push(days[i][j])
+        for(j = 0; j < Object.keys(days[i]).length; j++){
+            test_Word.push(days[i][String(j + 1)])
         }
     }
 }
@@ -49,7 +60,6 @@ function HideAndShow() {
     $("#getDays").toggle()
     $("#word_note").toggle()
 }
-
 
 var randomNumber
 var 영단어구분
