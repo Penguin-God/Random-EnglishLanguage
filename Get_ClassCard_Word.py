@@ -47,15 +47,14 @@ for i in range(15):
     soup = BeautifulSoup(browser.page_source, "html5lib")
     en = soup.find_all("div", attrs = {"class" : "ex_front hidden"})
     kr = soup.find_all("div", attrs = {"class" : "ex_back hidden"})
-    en_array = []
-    kr_array = []
+    word_array = []
     tojson_day = OrderedDict()
-
-    for j in range(len(en)):
-        en_array.append(en[j].get_text())
-        kr_array.append(kr[j].get_text())
-    for k in range(len(en_array)):
-        tojson_day[en_array[k]] = kr_array[k]
+    
+    for j in range(int(len(en) / 2)):
+        word_array.append(en[j].get_text() + " : " + kr[j].get_text())
+        print(en[j].get_text() + " : " + kr[j].get_text())
+    for k in range(len(word_array)):
+        tojson_day[k + 1] = word_array[k]
 
     word_data_day = "day" + str(i+1)
     word_data[word_data_day] = tojson_day
