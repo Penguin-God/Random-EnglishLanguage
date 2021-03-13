@@ -40,6 +40,11 @@ fetch("./word_data.json") // read json
         days = [day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15]
     });
 
+function Start() {
+    SetDay()
+    HideAndShow()
+    Current_WordCount(test_Word)
+}
 
 function Add_DayWords(startDay, endDay){ // 보여줄 영단어 test_Word에 push하기
     for(i = startDay - 1; i < endDay; i++){
@@ -55,12 +60,6 @@ function SetDay() {
     Add_DayWords(startDay, endDay)
 }
 
-function Start() {
-    SetDay()
-    HideAndShow()
-    Current_WordCount(test_Word)
-}
-
 function HideAndShow() {
     $("#getDays").toggle()
     $("#word_note").toggle()
@@ -68,7 +67,6 @@ function HideAndShow() {
 
 var randomNumber
 var 영단어구분
-
 function Split_Englsih_Korean() {
     randomNumber = Math.floor(Math.random() * test_Word.length)
     영단어구분 = test_Word[randomNumber].split(":")
@@ -78,6 +76,7 @@ function ConveyMeaning_ToHTML() {
     document.getElementById("word").innerHTML = 영단어구분[0]
     document.getElementById("뜻").innerHTML = "뜻"
 }
+
 
 function RandomWord()
 {
@@ -91,19 +90,29 @@ function RandomWord()
     if(document.getElementById("랜덤영단어").innerText == "다음 영단어"){
         Split_Englsih_Korean()
         ConveyMeaning_ToHTML()
-        Current_WordCount(test_Word)
         document.getElementById("랜덤영단어").innerHTML = "뜻 확인하기"
     }
     else{
-        test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
         뜻보여주기()
+        WordSplice()
+        Current_WordCount(test_Word)
     }
+}
+
+function WordSplice() {
+    test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
 }
 
 // 뜻 보여주는 함수 
 function 뜻보여주기(){
     document.getElementById("뜻").innerHTML = 영단어구분[1]
     document.getElementById("랜덤영단어").innerText = "다음 영단어"
+}
+
+function Current_WordCount(wordArray) {
+    currentWord = wordArray.length
+    currentWord_Text = "뜻을 확인하지 않은 영단어가" + "<br>" + String(currentWord) + "개 남았습니다."
+    document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }
 
 
@@ -119,10 +128,4 @@ function ResetValue() {
     document.getElementById("endDay").value = ""
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
-}
-
-function Current_WordCount(wordArray) {
-    currentWord = wordArray.length
-    currentWord_Text = "영단어가 " + String(currentWord) + " 개 남았습니다."
-    document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }
