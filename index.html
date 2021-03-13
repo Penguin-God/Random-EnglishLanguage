@@ -15,7 +15,7 @@
             <input id="endDay" type="number" class="myNumber" placeholder="끝낼 day를 적어주세요">
             
             <div class="day_button"> 
-                <button id="day_button" onclick="SetDay()">시작하기</button> 
+                <button id="day_button" onclick="Start()">시작하기</button> 
             </div>
         </div>
 
@@ -31,6 +31,10 @@
             </table>
             <div class="en_button"> 
                 <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button> 
+            </div>
+
+            <div id="current_Word_Count">
+                <p id="wordCount_Text">영단어가 ??개 남았습니다</p>
             </div>
         </div>
     </div>

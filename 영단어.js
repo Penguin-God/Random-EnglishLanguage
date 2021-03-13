@@ -53,7 +53,12 @@ function SetDay() {
     startDay = document.getElementById("startDay").value
     endDay = document.getElementById("endDay").value
     Add_DayWords(startDay, endDay)
+}
+
+function Start() {
+    SetDay()
     HideAndShow()
+    Current_WordCount(test_Word)
 }
 
 function HideAndShow() {
@@ -79,15 +84,18 @@ function RandomWord()
     if(test_Word.length == 0){ // 영단어 다 볼시 문구
         document.getElementById("word").innerHTML = "영단어를"
         document.getElementById("뜻").innerHTML = "다 봤습니다"
+        Current_WordCount(test_Word)
         return;
     }
 
-    if(document.getElementById("랜덤영단어").innerText != "뜻 확인하기"){
+    if(document.getElementById("랜덤영단어").innerText == "다음 영단어"){
         Split_Englsih_Korean()
         ConveyMeaning_ToHTML()
+        Current_WordCount(test_Word)
         document.getElementById("랜덤영단어").innerHTML = "뜻 확인하기"
     }
     else{
+        test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
         뜻보여주기()
     }
 }
@@ -95,7 +103,6 @@ function RandomWord()
 // 뜻 보여주는 함수 
 function 뜻보여주기(){
     document.getElementById("뜻").innerHTML = 영단어구분[1]
-    test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
     document.getElementById("랜덤영단어").innerText = "다음 영단어"
 }
 
@@ -112,4 +119,10 @@ function ResetValue() {
     document.getElementById("endDay").value = ""
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
+}
+
+function Current_WordCount(wordArray) {
+    currentWord = wordArray.length
+    currentWord_Text = "영단어가 " + String(currentWord) + " 개 남았습니다."
+    document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }

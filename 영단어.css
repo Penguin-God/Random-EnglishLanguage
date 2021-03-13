@@ -72,5 +72,17 @@ table{
 
 #word_note{
     display: none;
-    margin-top: 35%;
+    margin-top: 30%;
+}
+
+#current_Word_Count{
+    margin-top: 15%;
+    text-align: center;
+    width: 100%;
+}
+
+#wordCount_Text{
+    color: white;
+    font-weight: 600;
+    font-size: 200%;
 }
