@@ -40,24 +40,11 @@ fetch("./word_data.json") // read json
         days = [day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15]
     });
 
+// 시작
 function Start() {
-    SetDay()
+    Add_DayWords()
     HideAndShow()
     Current_WordCount(test_Word)
-}
-
-function Add_DayWords(startDay, endDay){ // 보여줄 영단어 test_Word에 push하기
-    for(i = startDay - 1; i < endDay; i++){
-        for(j = 0; j < Object.keys(days[i]).length; j++){
-            test_Word.push(days[i][String(j + 1)])
-        }
-    }
-}
-
-function SetDay() {
-    startDay = document.getElementById("startDay").value
-    endDay = document.getElementById("endDay").value
-    Add_DayWords(startDay, endDay)
 }
 
 function HideAndShow() {
@@ -65,6 +52,20 @@ function HideAndShow() {
     $("#word_note").toggle()
 }
 
+function Add_DayWords(){ // startDay, endDay
+    for(i = 0; i < testDays.length; i++){
+        for(j = 0; j < Object.keys(testDays[i]).length; j++){ // test_Word에 json file의 영단어 넣는 반복문
+             test_Word.push(testDays[i][String(j + 1)])
+        }
+    }
+}
+
+testDays = []
+function GetDay(day) {
+    testDays.push(days[day - 1])
+}
+
+// 랜덤으로 영단어 보여주기
 var randomNumber
 var 영단어구분
 function Split_Englsih_Korean() {
@@ -102,8 +103,7 @@ function RandomWord()
 function WordSplice() {
     test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
 }
-
-// 뜻 보여주는 함수 
+ 
 function 뜻보여주기(){
     document.getElementById("뜻").innerHTML = 영단어구분[1]
     document.getElementById("랜덤영단어").innerText = "다음 영단어"
@@ -115,15 +115,16 @@ function Current_WordCount(wordArray) {
     document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }
 
-
+// 재시작
 function ReStart()
 {
-    test_Word = []
     HideAndShow()
     ResetValue()
 }
 
 function ResetValue() {
+    test_Word = []
+    testDays = []
     document.getElementById("startDay").value = ""
     document.getElementById("endDay").value = ""
     document.getElementById("word").innerHTML = "영단어"
