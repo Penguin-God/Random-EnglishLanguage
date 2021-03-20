@@ -60,9 +60,40 @@ function Add_DayWords(){ // startDay, endDay
     }
 }
 
-testDays = []
+var testDays = []
+var currentDay = []
+
+function AddDay(day) {
+    const button_id = "day" + String(day) + "_Button"
+    if(document.getElementById(button_id).style.color != "red"){
+        GetDay(day)
+        Change_ButtonColor(button_id)
+    }
+    else{
+        RemoveDay(day)
+        Change_WhiteColor(button_id)
+    }
+}
+
 function GetDay(day) {
     testDays.push(days[day - 1])
+    currentDay.push(day)
+}
+
+function RemoveDay(onclickDay) {
+    for(var i = 0; i < currentDay.length; i++){
+        if(currentDay[i] == onclickDay){
+            testDays.splice(i, 1)
+        }
+    }
+}
+
+function Change_ButtonColor(id) {
+    document.getElementById(id).style.color = "red"
+}
+
+function Change_WhiteColor(id) {
+    document.getElementById(id).style.color = "white"
 }
 
 // 랜덤으로 영단어 보여주기
