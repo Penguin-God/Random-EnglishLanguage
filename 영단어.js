@@ -45,6 +45,7 @@ function Start() {
     Add_DayWords()
     HideAndShow()
     Current_WordCount(test_Word)
+    ShowCurrentDay()
 }
 
 function HideAndShow() {
@@ -60,9 +61,6 @@ function Add_DayWords(){ // startDay, endDay
     }
 }
 
-var testDays = []
-var currentDay = []
-
 function AddDay(day) {
     const button_id = "day" + String(day) + "_Button"
     if(document.getElementById(button_id).style.color != "red"){
@@ -75,6 +73,8 @@ function AddDay(day) {
     }
 }
 
+var currentDay = []
+var testDays = []
 function GetDay(day) {
     testDays.push(days[day - 1])
     currentDay.push(day)
@@ -94,6 +94,14 @@ function Change_ButtonColor(id) {
 
 function Change_WhiteColor(id) {
     document.getElementById(id).style.color = "white"
+}
+
+function ShowCurrentDay() {
+    var currentDays = "현재 포함되어 있는 day :"
+    for(var i = 0; i < currentDay.length; i++){
+        currentDays += "  Day" + String(currentDay[i])
+    }
+    document.getElementById("currentDay").innerHTML = currentDays
 }
 
 // 랜덤으로 영단어 보여주기
@@ -156,8 +164,15 @@ function ReStart()
 function ResetValue() {
     test_Word = []
     testDays = []
-    document.getElementById("startDay").value = ""
-    document.getElementById("endDay").value = ""
+    currentDay = []
+    ResetColor()
     document.getElementById("word").innerHTML = "영단어"
     document.getElementById("뜻").innerHTML = "뜻"
+}
+
+function ResetColor() {
+    for(var i = 0; i < 15; i++){
+        day_Id = "day" + String(i + 1) + "_Button"
+        Change_WhiteColor(day_Id)
+    }
 }

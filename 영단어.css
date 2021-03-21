@@ -72,17 +72,24 @@ table{
 
 #word_note{
     display: none;
-    margin-top: 30%;
+    margin-top: 5%;
 }
 
 #current_Word_Count{
     margin-top: 15%;
     text-align: center;
     width: 100%;
-}
-
-#wordCount_Text{
     color: white;
     font-weight: 600;
     font-size: 200%;
+}
+
+#currentDay{
+    text-align: center;
+    font-weight: 500;
+    font-size: 150%;
+}
+
+#랜덤영단어{
+    margin-top: 20%;
 }
