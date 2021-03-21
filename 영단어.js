@@ -93,7 +93,7 @@ function Change_ButtonColor(id) {
 }
 
 function Change_WhiteColor(id) {
-    document.getElementById(id).style.color = "white"
+    document.getElementById(id).style.color = "black"
 }
 
 function ShowCurrentDay() {
