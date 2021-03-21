@@ -44,7 +44,7 @@ fetch("./word_data.json") // read json
 function Start() {
     Add_DayWords()
     HideAndShow()
-    Current_WordCount(test_Word)
+    Current_WordCount()
     ShowCurrentDay()
 }
 
@@ -148,8 +148,8 @@ function 뜻보여주기(){
     document.getElementById("랜덤영단어").innerText = "다음 영단어"
 }
 
-function Current_WordCount(wordArray) {
-    currentWord = wordArray.length
+function Current_WordCount() {
+    currentWord = test_Word.length
     currentWord_Text = "뜻을 확인하지 않은 영단어가" + "<br>" + String(currentWord) + "개 남았습니다."
     document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }
