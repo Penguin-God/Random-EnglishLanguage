@@ -24,7 +24,7 @@ table {
 /* css reset */
 
 html{
-    background-color: #10232c;
+    background-color: #0f1518;
 }
 
 .container{
@@ -88,6 +88,7 @@ table{
     text-align: center;
     font-weight: 500;
     font-size: 150%;
+    color: white;
 }
 
 #랜덤영단어{
@@ -108,4 +109,12 @@ table{
 
 .day_button{
     margin-top: 5%;
+}
+
+#explanationText{
+    text-align: center;
+    font-size: 200%;
+    font-weight: 600;
+    color: white;
+    margin-top: 15%;
 }
