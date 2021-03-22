@@ -44,13 +44,9 @@ fetch("./word_data.json") // read json
 function Start() {
     Add_DayWords()
     HideAndShow()
-    Current_WordCount()
     ShowCurrentDay()
-}
 
-function HideAndShow() {
-    $("#getDays").toggle()
-    $("#word_note").toggle()
+    Current_WordCount()
 }
 
 function Add_DayWords(){ // startDay, endDay
@@ -61,15 +57,30 @@ function Add_DayWords(){ // startDay, endDay
     }
 }
 
+function HideAndShow() {
+    $("#getDays").toggle()
+    $("#word_note").toggle()
+}
+
+function ShowCurrentDay() {
+    var currentDays = "현재 포함되어 있는 day :"
+    for(var i = 0; i < currentDay.length; i++){
+        currentDays += "  Day" + String(currentDay[i])
+    }
+    document.getElementById("currentDay").innerHTML = currentDays
+}
+
+
+// day 추가
 function AddDay(day) {
     const button_id = "day" + String(day) + "_Button"
     if(document.getElementById(button_id).style.color != "red"){
         GetDay(day)
-        Change_ButtonColor(button_id)
+        Change_ButtonColor(button_id, "red")
     }
     else{
         RemoveDay(day)
-        Change_WhiteColor(button_id)
+        Change_ButtonColor(button_id, "white")
     }
 }
 
@@ -88,21 +99,10 @@ function RemoveDay(onclickDay) {
     }
 }
 
-function Change_ButtonColor(id) {
-    document.getElementById(id).style.color = "red"
+function Change_ButtonColor(id, buttonColor) {
+    document.getElementById(id).style.color = buttonColor
 }
 
-function Change_WhiteColor(id) {
-    document.getElementById(id).style.color = "black"
-}
-
-function ShowCurrentDay() {
-    var currentDays = "현재 포함되어 있는 day :"
-    for(var i = 0; i < currentDay.length; i++){
-        currentDays += "  Day" + String(currentDay[i])
-    }
-    document.getElementById("currentDay").innerHTML = currentDays
-}
 
 // 랜덤으로 영단어 보여주기
 var randomNumber
@@ -153,6 +153,7 @@ function Current_WordCount() {
     currentWord_Text = "뜻을 확인하지 않은 영단어가" + "<br>" + String(currentWord) + "개 남았습니다."
     document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }
+
 
 // 재시작
 function ReStart()
