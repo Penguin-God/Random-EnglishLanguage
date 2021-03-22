@@ -53,7 +53,7 @@ table{
     text-align: center;
     font-size: 200%;
     font-weight: bold;
-    margin-top: 4%;
+    margin-top: 25%;
     table-layout: fixed;
 }
 
@@ -76,7 +76,7 @@ table{
 }
 
 #current_Word_Count{
-    margin-top: 15%;
+    margin-top: 10%;
     text-align: center;
     width: 100%;
     color: white;
@@ -92,7 +92,9 @@ table{
 }
 
 #랜덤영단어{
-    margin-top: 20%;
+    margin-top: 10%;
+    width: 40%;
+    height: 10vh;
 }
 
 .dayPart, .day_button{

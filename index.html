@@ -46,27 +46,32 @@
         </div>
 
 
+
         <div id="word_note">
             <div>
-                <p id="currentDay"></p>
+                <p id="currentDay">currentDay</p>
             </div>
 
-            <div class="en_button"> 
-                <button id="랜덤영단어" class = "button" onclick="RandomWord()">다음 영단어</button> 
-            </div>
             <table border="2" align="center">
                 <tr>
                     <td class="단어장" id="word">영단어</td>
                     <td class="단어장" id="뜻">뜻</td>
                 </tr>
             </table>
+
             <div class="en_button"> 
-                <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button> 
+                <button id="랜덤영단어" class = "button" onclick="RandomWord()">다음 영단어</button> 
             </div>
 
             <div id="current_Word_Count">
                 <p id="wordCount_Text">영단어가 ??개 남았습니다</p>
             </div>
+
+            <div class="en_button"> 
+                <button id="ReStart" class="button" onclick="ReStart()">다시 시작하기</button> 
+            </div>
+
+            
         </div>
     </div>
 </body>
