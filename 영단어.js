@@ -174,6 +174,6 @@ function ResetValue() {
 function ResetColor() {
     for(var i = 0; i < 15; i++){
         day_Id = "day" + String(i + 1) + "_Button"
-        Change_WhiteColor(day_Id, black)
+        Change_ButtonColor(day_Id, black)
     }
 }
