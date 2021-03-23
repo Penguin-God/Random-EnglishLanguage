@@ -80,7 +80,7 @@ function AddDay(day) {
     }
     else{
         RemoveDay(day)
-        Change_ButtonColor(button_id, "white")
+        Change_ButtonColor(button_id, "black")
     }
 }
 
