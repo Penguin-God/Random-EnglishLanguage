@@ -80,7 +80,7 @@ function AddDay(day) {
     }
     else{
         RemoveDay(day)
-        Change_ButtonColor(button_id, "white")
+        Change_ButtonColor(button_id, "black")
     }
 }
 
@@ -174,6 +174,6 @@ function ResetValue() {
 function ResetColor() {
     for(var i = 0; i < 15; i++){
         day_Id = "day" + String(i + 1) + "_Button"
-        Change_WhiteColor(day_Id)
+        Change_WhiteColor(day_Id, black)
     }
 }
