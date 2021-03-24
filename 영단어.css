@@ -48,9 +48,10 @@ button{
     margin-right: 5%;
 }
 
-/* .dayButton{
-    height: 9vh;
-} */
+.dayButton{
+    width: 27%;
+    height: 6vh;
+}
 
 .dayPart, .startButtonDiv{
     margin-top: 2%;
