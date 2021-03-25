@@ -94,6 +94,7 @@ function GetDay(day) {
 function RemoveDay(onclickDay) {
     for(var i = 0; i < currentDay.length; i++){
         if(currentDay[i] == onclickDay){
+            currentDay.splice(i, 1)
             testDays.splice(i, 1)
         }
     }
