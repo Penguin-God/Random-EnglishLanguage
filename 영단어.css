@@ -91,7 +91,7 @@ table{
     font-size: 200%;
     font-weight: bold;
 
-    margin-top: 15%;
+    margin-top: 25%;
     table-layout: fixed; /* 테이블 크기 고정 */
 }
 
@@ -102,7 +102,7 @@ table{
 }
 
 #current_Word_Count{
-    margin-top: 10%;
+    margin-top: 15%;
     width: 100%;
     color: white;
     font-weight: 600;
