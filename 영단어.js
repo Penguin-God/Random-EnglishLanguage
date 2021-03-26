@@ -42,6 +42,10 @@ fetch("./word_data.json") // read json
 
 // 시작
 function Start() {
+    if(currentDay.length == 0){
+        alert("선택된 Day가 없습니다. 하나 이상의 Day를 선택하고 시작해주세요")
+        return
+    }
     Add_DayWords()
     HideAndShow()
     ShowCurrentDay()
@@ -159,6 +163,11 @@ function Current_WordCount() {
 // 재시작
 function ReStart()
 {
+    if(test_Word.length == 0) ResetFunction_Operation()
+    else Check_BackWebpage()
+}
+
+function ResetFunction_Operation(params) {
     HideAndShow()
     ResetValue()
 }
@@ -177,4 +186,9 @@ function ResetColor() {
         day_Id = "day" + String(i + 1) + "_Button"
         Change_ButtonColor(day_Id, "black")
     }
+}
+
+function Check_BackWebpage(massage) {
+    backPage = window.confirm("확인하지 않은 영단어가 남아 있습니다. 정말로 처음 화면으로 돌아가시겠습니까?")
+    if(backPage) ResetFunction_Operation()
 }
