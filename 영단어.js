@@ -50,7 +50,7 @@ function Start() {
     HideAndShow()
     ShowCurrentDay()
 
-    Current_WordCount()
+    Current_WordCount(test_Word)
 }
 
 function Add_DayWords(){ // startDay, endDay
@@ -77,7 +77,7 @@ function ShowCurrentDay() {
 
 // day 추가
 function AddDay(day) {
-    const button_id = "day" + String(day) + "_Button"
+    const button_id = Return_DayButtonId(day)
     if(document.getElementById(button_id).style.color != "red"){
         GetDay(day)
         Change_ButtonColor(button_id, "red")
@@ -86,6 +86,11 @@ function AddDay(day) {
         RemoveDay(day)
         Change_ButtonColor(button_id, "black")
     }
+}
+
+function Return_DayButtonId(day) {
+    const button_id = "day" + String(day) + "_Button"
+    return button_id
 }
 
 var currentDay = []
@@ -112,51 +117,52 @@ function Change_ButtonColor(id, buttonColor) {
 // 랜덤으로 영단어 보여주기
 var randomNumber
 var 영단어구분
+var hideMean = true
 function Split_Englsih_Korean() {
     randomNumber = Math.floor(Math.random() * test_Word.length)
     영단어구분 = test_Word[randomNumber].split(":")
 }
 
-function ConveyMeaning_ToHTML() {
-    document.getElementById("word").innerHTML = 영단어구분[0]
-    document.getElementById("뜻").innerHTML = "뜻"
+function ConveyText_ToTable(word, mean, buttonText) {
+    document.getElementById("word").innerHTML = word
+    document.getElementById("뜻").innerHTML = mean
+    document.getElementById("랜덤영단어").innerHTML = buttonText
 }
 
 
 function RandomWord()
 {
-    if(test_Word.length == 0){ // 영단어 다 볼시 문구
-        document.getElementById("word").innerHTML = "영단어를"
-        document.getElementById("뜻").innerHTML = "다 봤습니다"
-        Current_WordCount(test_Word)
+    if(test_Word.length == 0){ // 영단어 다 볼시
+        TestEnd()
         return;
     }
 
-    if(document.getElementById("랜덤영단어").innerText == "다음 영단어"){
+    if(hideMean){
         Split_Englsih_Korean()
-        ConveyMeaning_ToHTML()
-        document.getElementById("랜덤영단어").innerHTML = "뜻 확인하기"
+        ConveyText_ToTable(영단어구분[0], "뜻", "뜻 확인하기")
+        hideMean = false
     }
     else{
-        뜻보여주기()
-        WordSplice()
+        ConveyText_ToTable(영단어구분[0], 영단어구분[1], "다음 영단어")
+        WordSplice(randomNumber)
         Current_WordCount(test_Word)
+        hideMean = true
     }
 }
 
-function WordSplice() {
+function WordSplice(randomNumber) {
     test_Word.splice(randomNumber, 1) // 한번 본 영단어  삭제
 }
- 
-function 뜻보여주기(){
-    document.getElementById("뜻").innerHTML = 영단어구분[1]
-    document.getElementById("랜덤영단어").innerText = "다음 영단어"
-}
 
-function Current_WordCount() {
+function Current_WordCount(test_Word) {
     currentWord = test_Word.length
     currentWord_Text = "뜻을 확인하지 않은 영단어가" + "<br>" + String(currentWord) + "개 남았습니다."
     document.getElementById("wordCount_Text").innerHTML = currentWord_Text
+}
+
+function TestEnd(params) {
+    ConveyText_ToTable("영단어를", "다 봤습니다", "end")
+    document.getElementById("wordCount_Text").innerHTML = "모든 영단어를 확인했습니다"
 }
 
 
