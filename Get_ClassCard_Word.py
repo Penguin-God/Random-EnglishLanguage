@@ -36,12 +36,14 @@ browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 Sleep_and_ClickXpath(3, "/html/body/div[1]/div[2]/div/div/div[2]/div/a[14]/div/div[1]/img")
 
 # 광고 우회용
-time.sleep(3)
-button = browser.find_element_by_xpath("//*[@id='newsPopupModal']/div[2]/div/div/div[4]/a/i")
+time.sleep(5)
+button = browser.find_element_by_xpath("//*[@id='newsPopupModal']/div[2]/div/div/div[4]/a")
 browser.execute_script("arguments[0].click();", button)
 
+# 실제 데이터 수집
 word_data = {}
-for i in range(15):
+word_data_day = ""
+for i in range(30):
     xPath = "/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div[{}]/div[1]/div[2]/div/a".format(i + 1)
     Sleep_and_ClickXpath(3, xPath)
     soup = BeautifulSoup(browser.page_source, "html5lib")
@@ -53,6 +55,7 @@ for i in range(15):
     for j in range(int(len(en) / 2)):
         word_array.append(en[j].get_text() + " : " + kr[j].get_text())
         print(en[j].get_text() + " : " + kr[j].get_text())
+
     for k in range(len(word_array)):
         tojson_day[k + 1] = word_array[k]
 
@@ -61,5 +64,5 @@ for i in range(15):
     time.sleep(3)
     browser.back()
 
-with open('word_data.json', 'w', encoding='utf-8') as makeJson:
+with open('word_data_test.json', 'w', encoding='utf-8') as makeJson:
     json.dump(word_data, makeJson, ensure_ascii=False, indent='\t')

@@ -17,27 +17,15 @@ var day_14 = []
 var day_15 = []
 var days = []
 
-fetch("./word_data.json") // read json
+fetch("./word_data_test.json") // read json
     .then(function(resp){
         return resp.json();
     })
     .then(function(data){
-        day_1 = data["day1"]
-        day_2 = data["day2"]
-        day_3 = data["day3"]
-        day_4 = data["day4"]
-        day_5 = data["day5"]
-        day_6 = data["day6"]
-        day_7 = data["day7"]
-        day_8 = data["day8"]
-        day_9 = data["day9"]
-        day_10 = data["day10"]
-        day_11 = data["day11"]
-        day_12 = data["day12"]
-        day_13 = data["day13"]
-        day_14 = data["day14"]
-        day_15 = data["day15"]
-        days = [day_1, day_2, day_3, day_4, day_5, day_6, day_7, day_8, day_9, day_10, day_11, day_12, day_13, day_14, day_15]
+        for(var i = 0; i < Object.keys(data).length; i++){
+            let addDay = "day" + (i + 1);
+            days.push(data[addDay]);
+        }
     });
 
 // 시작
@@ -59,6 +47,13 @@ function Add_DayWords(){ // startDay, endDay
              test_Word.push(testDays[i][String(j + 1)])
         }
     }
+}
+
+var currentDay = []
+var testDays = []
+function GetDay(day) {
+    testDays.push(days[day - 1])
+    currentDay.push(day)
 }
 
 function HideAndShow() {
@@ -93,13 +88,6 @@ function Return_DayButtonId(day) {
     return button_id
 }
 
-var currentDay = []
-var testDays = []
-function GetDay(day) {
-    testDays.push(days[day - 1])
-    currentDay.push(day)
-}
-
 function RemoveDay(onclickDay) {
     for(var i = 0; i < currentDay.length; i++){
         if(currentDay[i] == onclickDay){
@@ -117,7 +105,7 @@ function Change_ButtonColor(id, buttonColor) {
 // 랜덤으로 영단어 보여주기
 var randomNumber
 var 영단어구분
-var hideMean = true
+var hideMean = true // 뜻을 확인한 상태면 다음 단어로 아니라면 뜻을 보여줌
 function Split_Englsih_Korean() {
     randomNumber = Math.floor(Math.random() * test_Word.length)
     영단어구분 = test_Word[randomNumber].split(":")
@@ -133,7 +121,6 @@ function ConveyText_ToTable(word, mean, buttonText) {
 function RandomWord()
 {
     if(test_Word.length == 0){ // 영단어 다 볼시
-        TestEnd()
         return;
     }
 
@@ -147,6 +134,10 @@ function RandomWord()
         WordSplice(randomNumber)
         Current_WordCount(test_Word)
         hideMean = true
+        if(test_Word.length == 0){ // 여기코드 간결하게 바꾸기
+            ConveyText_ToTable(영단어구분[0], 영단어구분[1], "end")
+            document.getElementById("wordCount_Text").innerHTML = "모든 영단어를 확인했습니다"
+        } 
     }
 }
 
@@ -160,7 +151,7 @@ function Current_WordCount(test_Word) {
     document.getElementById("wordCount_Text").innerHTML = currentWord_Text
 }
 
-function TestEnd(params) {
+function TestEnd() {
     ConveyText_ToTable("영단어를", "다 봤습니다", "end")
     document.getElementById("wordCount_Text").innerHTML = "모든 영단어를 확인했습니다"
 }
@@ -188,7 +179,7 @@ function ResetValue() {
 }
 
 function ResetColor() {
-    for(var i = 0; i < 15; i++){
+    for(var i = 0; i < days.length; i++){
         day_Id = "day" + String(i + 1) + "_Button"
         Change_ButtonColor(day_Id, "black")
     }
