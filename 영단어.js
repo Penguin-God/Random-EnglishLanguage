@@ -26,6 +26,7 @@ fetch("./word_data_test.json") // read json
             let addDay = "day" + (i + 1);
             days.push(data[addDay]);
         }
+        console.log(days)
     });
 
 // 시작

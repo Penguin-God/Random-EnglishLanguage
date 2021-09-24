@@ -44,7 +44,7 @@ browser.execute_script("arguments[0].click();", button)
 # 실제 데이터 수집
 word_data = {}
 word_data_day = ""
-for i in range(30):
+for i in range(50):
     xPath = "/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[1]/div[{}]/div[1]/div[2]/div/a".format(i + 1)
     Sleep_and_ClickXpath(3, xPath)
     soup = BeautifulSoup(browser.page_source, "html5lib")
@@ -55,7 +55,7 @@ for i in range(30):
     
     for j in range(int(len(en) / 2)):
         word_array.append(en[j].get_text() + " : " + kr[j].get_text())
-        print(en[j].get_text() + " : " + kr[j].get_text())
+        #print(en[j].get_text() + " : " + kr[j].get_text())
 
     for k in range(len(word_array)):
         tojson_day[k + 1] = word_array[k]
@@ -64,6 +64,7 @@ for i in range(30):
     word_data[word_data_day] = tojson_day
     time.sleep(3)
     browser.back()
+browser.close()
 
 with open('word_data_test.json', 'w', encoding='utf-8') as makeJson:
     json.dump(word_data, makeJson, ensure_ascii=False, indent='\t')
