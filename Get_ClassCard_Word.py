@@ -1,10 +1,6 @@
 from bs4 import BeautifulSoup
-import requests
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import time
-import random
-import os
 import json
 from collections import OrderedDict
 
@@ -26,7 +22,7 @@ input_js = ' \
         document.getElementById("login_id").value = "{login_id}"; \
         document.getElementById("login_pwd").value = "{login_pwd}"; \
     '.format(login_id = "gkswh4860", login_pwd = "2134okok^^") # 아이디 비번 입력
-time.sleep(random.uniform(1,3)) # 자동화탐지를 우회 하기 위한 delay
+time.sleep(3) # 자동화탐지를 우회 하기 위한 delay
 browser.execute_script(input_js)
 time.sleep(3) # 자동화탐지를 우회 하기 위한 delay
 browser.find_element_by_xpath("//*[@id='loginForm']/div[2]/button").click()
@@ -34,6 +30,7 @@ browser.find_element_by_xpath("//*[@id='loginForm']/div[2]/button").click()
 Sleep_and_ClickXpath(3, "/html/body/div[1]/div[1]/div/div/div[2]/div/div[1]/div/a")
 Sleep_and_ClickXpath(3, "/html/body/div[1]/div[2]/div/div/div[2]/div/div[2]/ul/li[4]/a")
 Sleep_and_ClickXpath(3, "/html/body/div[1]/div[2]/div/div/div[2]/div/div[3]/div[2]/div/div/a[4]/img") # 교재 이미지 클릭
+
 #browser.execute_script("window.scrollTo(0, document.body.scrollHeight)") # 스크롤 내리기
 
 # 광고 우회용
@@ -60,6 +57,7 @@ for i in range(50):
     for k in range(len(word_array)):
         tojson_day[k + 1] = word_array[k]
 
+    # json 데이터 저장 방식 바꾸기
     word_data_day = "day" + str(i+1)
     word_data[word_data_day] = tojson_day
     time.sleep(3)

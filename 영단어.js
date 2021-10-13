@@ -1,20 +1,4 @@
 var test_Word = []
-
-var day_1 = []
-var day_2 = []
-var day_3 = []
-var day_4 = []
-var day_5 = []
-var day_6 = []
-var day_7 = []
-var day_8 = []
-var day_9 = []
-var day_10 = []
-var day_11 = []
-var day_12 = []
-var day_13 = []
-var day_14 = []
-var day_15 = []
 var days = []
 
 fetch("./word_data_test.json") // read json
@@ -26,6 +10,7 @@ fetch("./word_data_test.json") // read json
             let addDay = "day" + (i + 1);
             days.push(data[addDay]);
         }
+        console.log(Object.keys(data)[0])
         console.log(days)
     });
 
